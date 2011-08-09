@@ -155,9 +155,9 @@
 		DC206A5313F07BE2001661CD /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C5D1013F19E1000527196 /* OCLRenderer.h */,
 				DC1C5D0D13F19DD800527196 /* OCLConsoleRenderer.h */,
 				DC1C5D0E13F19DD800527196 /* OCLConsoleRenderer.m */,
-				DC1C5D1013F19E1000527196 /* OCLRenderer.h */,
 			);
 			name = Renderer;
 			sourceTree = "<group>";

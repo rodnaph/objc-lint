@@ -6,6 +6,7 @@
 
 @interface OCLDirectoryParser (Private)
 
+// parse the file for lint errors and return them
 - (NSArray *)parseFile:(NSString *)filePath;
 
 @end
@@ -63,14 +64,25 @@
 - (NSArray *)parseFile:(NSString *)filePath {
     
     OCLTokeniser *tokeniser = [[[OCLTokeniser alloc] initWithPath:filePath] autorelease];
-    NSMutableArray *fileErrors = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *errors = [[[NSMutableArray alloc] init] autorelease];
     NSArray *tokens = [tokeniser getAllTokens];
+    int tokenCount = sizeof(tokens) / sizeof(OCLToken *);
     
-    for ( OCLToken *token in tokens ) {
-        // @todo dispatch tokens to parser rules
+    for ( int i=0; i<tokenCount; i++ ) {
+        
+        for ( id <OCLRule> rule in rules_ ) {
+            
+            NSArray *ruleErrors = [rule handleToken:tokens atIndex:i];
+            
+            if ( ruleErrors != nil ) {
+                [errors addObjectsFromArray:ruleErrors];
+            }
+            
+        }
+        
     }
     
-    return fileErrors;
+    return errors;
 
 }
 

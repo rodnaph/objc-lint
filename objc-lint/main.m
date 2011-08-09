@@ -6,13 +6,13 @@
 
 int main ( int argc, const char *argv[] ) {
 
-    if ( argc != 1 ) {
+    if ( argc < 2 ) {
         NSLog( @"Usage: objc-ling /path/to/src" );
         exit( 1 );
     }
-    
+
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    NSString *srcPath = @"./"; // argv[ 0 ];
+    NSString *srcPath = [[[NSString alloc] initWithCString:argv[1] encoding:NSUTF8StringEncoding] autorelease];
     OCLDirectoryParser *parser = [[[OCLDirectoryParser alloc] init] autorelease];
     OCLConsoleRenderer *renderer = [[[OCLConsoleRenderer alloc] init] autorelease];
     NSArray *errors = [parser parseDirectory:srcPath];

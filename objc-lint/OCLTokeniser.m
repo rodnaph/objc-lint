@@ -10,10 +10,13 @@
 // put a character back to be read again
 - (void)putBack:(int)chr;
 
+// YES if chr is A-Za-z_, NO otherwise
 - (BOOL)isAlpha:(int)chr;
 
+// YES if chr is A-Za-z0-9_, NO otherwise
 - (BOOL)isAlphaNumeric:(int)chr;
 
+// YES if chr is 0-9, NO otherwise
 - (BOOL)isNumeric:(int)chr;
 
 @end

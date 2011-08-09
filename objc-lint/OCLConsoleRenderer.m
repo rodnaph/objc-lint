@@ -1,14 +1,17 @@
 
 #import "OCLConsoleRenderer.h"
+#import "OCLError.h"
 
 @implementation OCLConsoleRenderer
 
 - (void)renderErrors:(NSArray *)errors {
     
-    NSLog( @"Renderer..." );
-    
     if ( [errors count] > 0 ) {
-        NSLog( @"Errors..." );
+        
+        for ( OCLError *error in errors ) {
+            NSLog( @"ERROR" );
+        }
+        
     }
     
 }

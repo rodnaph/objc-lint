@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1C5D0F13F19DD800527196 /* OCLConsoleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1C5D0E13F19DD800527196 /* OCLConsoleRenderer.m */; };
+		DC1C5D1413F1E84C00527196 /* OCLBaseRule.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1C5D1313F1E84C00527196 /* OCLBaseRule.m */; };
+		DC1C5D1713F1E89B00527196 /* OCLError.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1C5D1613F1E89B00527196 /* OCLError.m */; };
+		DC1C5D1A13F1EA0100527196 /* OCLDirectoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1C5D1913F1EA0100527196 /* OCLDirectoryParser.m */; };
+		DC1C5D1D13F1EDE700527196 /* OCLRuleUnderscoredIvars.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1C5D1C13F1EDE700527196 /* OCLRuleUnderscoredIvars.m */; };
 		DC206A4513F078C5001661CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC206A4413F078C5001661CD /* Foundation.framework */; };
 		DC206A4813F078C5001661CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC206A4713F078C5001661CD /* main.m */; };
 		DC206A5613F07C29001661CD /* OCLTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DC206A5513F07C29001661CD /* OCLTokeniser.m */; };
@@ -27,6 +32,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC1C5D0D13F19DD800527196 /* OCLConsoleRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLConsoleRenderer.h; sourceTree = "<group>"; };
+		DC1C5D0E13F19DD800527196 /* OCLConsoleRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLConsoleRenderer.m; sourceTree = "<group>"; };
+		DC1C5D1013F19E1000527196 /* OCLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLRenderer.h; sourceTree = "<group>"; };
+		DC1C5D1113F19E5700527196 /* OCLRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLRule.h; sourceTree = "<group>"; };
+		DC1C5D1213F1E84C00527196 /* OCLBaseRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLBaseRule.h; sourceTree = "<group>"; };
+		DC1C5D1313F1E84C00527196 /* OCLBaseRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLBaseRule.m; sourceTree = "<group>"; };
+		DC1C5D1513F1E89B00527196 /* OCLError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLError.h; sourceTree = "<group>"; };
+		DC1C5D1613F1E89B00527196 /* OCLError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLError.m; sourceTree = "<group>"; };
+		DC1C5D1813F1EA0100527196 /* OCLDirectoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLDirectoryParser.h; sourceTree = "<group>"; };
+		DC1C5D1913F1EA0100527196 /* OCLDirectoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLDirectoryParser.m; sourceTree = "<group>"; };
+		DC1C5D1B13F1EDE700527196 /* OCLRuleUnderscoredIvars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLRuleUnderscoredIvars.h; sourceTree = "<group>"; };
+		DC1C5D1C13F1EDE700527196 /* OCLRuleUnderscoredIvars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLRuleUnderscoredIvars.m; sourceTree = "<group>"; };
 		DC206A4013F078C5001661CD /* objc-lint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "objc-lint"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC206A4413F078C5001661CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC206A4713F078C5001661CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +69,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1C5D0C13F19D2D00527196 /* Rule */ = {
+			isa = PBXGroup;
+			children = (
+				DC1C5D1113F19E5700527196 /* OCLRule.h */,
+				DC1C5D1213F1E84C00527196 /* OCLBaseRule.h */,
+				DC1C5D1313F1E84C00527196 /* OCLBaseRule.m */,
+				DC1C5D1B13F1EDE700527196 /* OCLRuleUnderscoredIvars.h */,
+				DC1C5D1C13F1EDE700527196 /* OCLRuleUnderscoredIvars.m */,
+			);
+			name = Rule;
+			sourceTree = "<group>";
+		};
 		DC206A3513F078C4001661CD = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +115,8 @@
 				DC206A4913F078C5001661CD /* Supporting Files */,
 				DC206A5813F095BE001661CD /* OCLFileIterator.h */,
 				DC206A5913F095BE001661CD /* OCLFileIterator.m */,
+				DC1C5D1513F1E89B00527196 /* OCLError.h */,
+				DC1C5D1613F1E89B00527196 /* OCLError.m */,
 				DC206A4713F078C5001661CD /* main.m */,
 			);
 			path = "objc-lint";
@@ -114,6 +145,9 @@
 		DC206A5213F07BDA001661CD /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C5D0C13F19D2D00527196 /* Rule */,
+				DC1C5D1813F1EA0100527196 /* OCLDirectoryParser.h */,
+				DC1C5D1913F1EA0100527196 /* OCLDirectoryParser.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -121,6 +155,9 @@
 		DC206A5313F07BE2001661CD /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C5D0D13F19DD800527196 /* OCLConsoleRenderer.h */,
+				DC1C5D0E13F19DD800527196 /* OCLConsoleRenderer.m */,
+				DC1C5D1013F19E1000527196 /* OCLRenderer.h */,
 			);
 			name = Renderer;
 			sourceTree = "<group>";
@@ -176,6 +213,11 @@
 				DC206A5613F07C29001661CD /* OCLTokeniser.m in Sources */,
 				DC206A5A13F095BE001661CD /* OCLFileIterator.m in Sources */,
 				DC22B21A13F10B110067DC1E /* OCLToken.m in Sources */,
+				DC1C5D0F13F19DD800527196 /* OCLConsoleRenderer.m in Sources */,
+				DC1C5D1413F1E84C00527196 /* OCLBaseRule.m in Sources */,
+				DC1C5D1713F1E89B00527196 /* OCLError.m in Sources */,
+				DC1C5D1A13F1EA0100527196 /* OCLDirectoryParser.m in Sources */,
+				DC1C5D1D13F1EDE700527196 /* OCLRuleUnderscoredIvars.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 
 @interface OCLTokeniser : NSObject {
     NSString *fileContent_;
-    int currentPos_, lastChr_;
+    int currentPos_;
 }
 
 @property (nonatomic, retain) NSString *path;
@@ -21,5 +21,8 @@
 
 // return the next token if there is one, or nil
 - (OCLToken *)next;
+
+// read configured file and return all tokens
+- (NSArray *)getAllTokens;
 
 @end

@@ -1,33 +1,24 @@
 
 #import "OCLFileIterator.h"
-#import "OCLTokeniser.h"
+#import "OCLDirectoryParser.h"
+#import "OCLConsoleRenderer.h"
+#import "OCLRuleUnderscoredIvars.h"
 
-int main ( int argc, const char * argv[] ) {
+int main ( int argc, const char *argv[] ) {
 
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
-    OCLFileIterator *iterator = [[[OCLFileIterator alloc] initWithPath:@"/Users/rod/Code/objc-lint/objc-lint/"] autorelease];
-    NSString *path;
-
-    NSLog( @"Starting..." );
-    
-    while ( (path = [iterator next]) != nil ) {
-        
-        OCLTokeniser *tokeniser = [[OCLTokeniser alloc] initWithPath:path];
-        OCLToken *token;
-        
-        NSLog( @"File: '%@'", path );
-        
-        while ( (token = [tokeniser next]) != nil ) {
-            NSLog( @"  %@", token.content );
-        }
-        
-        NSLog( @" " );
-        
+    if ( argc != 1 ) {
+        NSLog( @"Usage: objc-ling /path/to/src" );
+        exit( 1 );
     }
     
-    NSLog( @"Done!" );
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    NSString *srcPath = @"./"; // argv[ 0 ];
+    OCLDirectoryParser *parser = [[[OCLDirectoryParser alloc] init] autorelease];
+    OCLConsoleRenderer *renderer = [[[OCLConsoleRenderer alloc] init] autorelease];
+    NSArray *errors = [parser parseDirectory:srcPath];
     
+    [parser addRule:[[[OCLRuleUnderscoredIvars alloc] init] autorelease]];
+    [renderer renderErrors:errors];
     [pool drain];
     
     return 0;

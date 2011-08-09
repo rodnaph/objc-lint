@@ -1,0 +1,4 @@
+
+@interface OCLError : NSObject {}
+
+@end

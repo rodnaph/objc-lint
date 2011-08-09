@@ -4,10 +4,16 @@
 
 @interface OCLTokeniser (Private)
 
+// read a single character from the file (return any putBack)
 - (int)read;
+
+// put a character back to be read again
 - (void)putBack:(int)chr;
+
 - (BOOL)isAlpha:(int)chr;
+
 - (BOOL)isAlphaNumeric:(int)chr;
+
 - (BOOL)isNumeric:(int)chr;
 
 @end
@@ -56,7 +62,6 @@ static const int asciiTokens[26] = {
         
         fileContent_ = [[NSString alloc] initWithContentsOfFile:path_ encoding:NSUTF8StringEncoding error:nil];
         currentPos_ = 0;
-        lastChr_ = -1;
         
     }
     
@@ -75,6 +80,19 @@ static const int asciiTokens[26] = {
 
 #pragma mark -
 #pragma mark Methods
+
+- (NSArray *)getAllTokens {
+    
+    NSMutableArray *tokens = [[[NSMutableArray alloc] init] autorelease];
+    OCLToken *token;
+    
+    while ( (token = [self next]) != nil ) {
+        [tokens addObject:token];
+    }
+    
+    return [NSArray arrayWithArray:tokens];
+    
+}
 
 - (OCLToken *)next {
 
@@ -208,19 +226,15 @@ static const int asciiTokens[26] = {
 
 - (int)read {
     
-    if ( lastChr_ != -1 ) {
-        int chr = lastChr_;
-        lastChr_ = -1;
-        return chr;
-    }
-    
     return [fileContent_ characterAtIndex:currentPos_++];
     
 }
 
 - (void)putBack:(int)chr {
     
-    lastChr_ = chr;
+    if ( currentPos_ > 0 ) {
+        currentPos_--;
+    }
     
 }
 

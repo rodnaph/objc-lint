@@ -1,0 +1,267 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC206A4513F078C5001661CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC206A4413F078C5001661CD /* Foundation.framework */; };
+		DC206A4813F078C5001661CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC206A4713F078C5001661CD /* main.m */; };
+		DC206A5613F07C29001661CD /* OCLTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DC206A5513F07C29001661CD /* OCLTokeniser.m */; };
+		DC206A5A13F095BE001661CD /* OCLFileIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC206A5913F095BE001661CD /* OCLFileIterator.m */; };
+		DC22B21A13F10B110067DC1E /* OCLToken.m in Sources */ = {isa = PBXBuildFile; fileRef = DC22B21913F10B110067DC1E /* OCLToken.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC206A3E13F078C5001661CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DC206A4013F078C5001661CD /* objc-lint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "objc-lint"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC206A4413F078C5001661CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC206A4713F078C5001661CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC206A4A13F078C5001661CD /* objc-lint-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objc-lint-Prefix.pch"; sourceTree = "<group>"; };
+		DC206A4B13F078C5001661CD /* objc_lint.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = objc_lint.1; sourceTree = "<group>"; };
+		DC206A5413F07C29001661CD /* OCLTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLTokeniser.h; sourceTree = "<group>"; };
+		DC206A5513F07C29001661CD /* OCLTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLTokeniser.m; sourceTree = "<group>"; };
+		DC206A5813F095BE001661CD /* OCLFileIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLFileIterator.h; sourceTree = "<group>"; };
+		DC206A5913F095BE001661CD /* OCLFileIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLFileIterator.m; sourceTree = "<group>"; };
+		DC22B21813F10B110067DC1E /* OCLToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLToken.h; sourceTree = "<group>"; };
+		DC22B21913F10B110067DC1E /* OCLToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLToken.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC206A3D13F078C5001661CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC206A4513F078C5001661CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC206A3513F078C4001661CD = {
+			isa = PBXGroup;
+			children = (
+				DC206A4613F078C5001661CD /* objc-lint */,
+				DC206A4313F078C5001661CD /* Frameworks */,
+				DC206A4113F078C5001661CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC206A4113F078C5001661CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC206A4013F078C5001661CD /* objc-lint */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC206A4313F078C5001661CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC206A4413F078C5001661CD /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC206A4613F078C5001661CD /* objc-lint */ = {
+			isa = PBXGroup;
+			children = (
+				DC206A5313F07BE2001661CD /* Renderer */,
+				DC206A5213F07BDA001661CD /* Parser */,
+				DC206A5113F07BD1001661CD /* Tokeniser */,
+				DC206A4913F078C5001661CD /* Supporting Files */,
+				DC206A5813F095BE001661CD /* OCLFileIterator.h */,
+				DC206A5913F095BE001661CD /* OCLFileIterator.m */,
+				DC206A4713F078C5001661CD /* main.m */,
+			);
+			path = "objc-lint";
+			sourceTree = "<group>";
+		};
+		DC206A4913F078C5001661CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC206A4B13F078C5001661CD /* objc_lint.1 */,
+				DC206A4A13F078C5001661CD /* objc-lint-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC206A5113F07BD1001661CD /* Tokeniser */ = {
+			isa = PBXGroup;
+			children = (
+				DC206A5413F07C29001661CD /* OCLTokeniser.h */,
+				DC206A5513F07C29001661CD /* OCLTokeniser.m */,
+				DC22B21813F10B110067DC1E /* OCLToken.h */,
+				DC22B21913F10B110067DC1E /* OCLToken.m */,
+			);
+			name = Tokeniser;
+			sourceTree = "<group>";
+		};
+		DC206A5213F07BDA001661CD /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		DC206A5313F07BE2001661CD /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Renderer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC206A3F13F078C5001661CD /* objc-lint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC206A4E13F078C5001661CD /* Build configuration list for PBXNativeTarget "objc-lint" */;
+			buildPhases = (
+				DC206A3C13F078C5001661CD /* Sources */,
+				DC206A3D13F078C5001661CD /* Frameworks */,
+				DC206A3E13F078C5001661CD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "objc-lint";
+			productName = "objc-lint";
+			productReference = DC206A4013F078C5001661CD /* objc-lint */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC206A3713F078C4001661CD /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = DC206A3A13F078C4001661CD /* Build configuration list for PBXProject "objc-lint" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC206A3513F078C4001661CD;
+			productRefGroup = DC206A4113F078C5001661CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC206A3F13F078C5001661CD /* objc-lint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC206A3C13F078C5001661CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC206A4813F078C5001661CD /* main.m in Sources */,
+				DC206A5613F07C29001661CD /* OCLTokeniser.m in Sources */,
+				DC206A5A13F095BE001661CD /* OCLFileIterator.m in Sources */,
+				DC22B21A13F10B110067DC1E /* OCLToken.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DC206A4C13F078C5001661CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC206A4D13F078C5001661CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DC206A4F13F078C5001661CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "objc-lint/objc-lint-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC206A5013F078C5001661CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "objc-lint/objc-lint-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC206A3A13F078C4001661CD /* Build configuration list for PBXProject "objc-lint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC206A4C13F078C5001661CD /* Debug */,
+				DC206A4D13F078C5001661CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC206A4E13F078C5001661CD /* Build configuration list for PBXNativeTarget "objc-lint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC206A4F13F078C5001661CD /* Debug */,
+				DC206A5013F078C5001661CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC206A3713F078C4001661CD /* Project object */;
+}

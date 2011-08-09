@@ -8,8 +8,10 @@
     
     if ( [errors count] > 0 ) {
         
+        NSLog( @"Errors found..." );
+        
         for ( OCLError *error in errors ) {
-            NSLog( @"ERROR" );
+            NSLog( @"  ERROR: %@", error.description );
         }
         
     }

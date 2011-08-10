@@ -66,11 +66,9 @@
     OCLTokeniser *tokeniser = [[[OCLTokeniser alloc] initWithPath:filePath] autorelease];
     NSMutableArray *errors = [[[NSMutableArray alloc] init] autorelease];
     NSArray *tokens = [tokeniser getAllTokens];
-    int tokenCount = sizeof(tokens) / sizeof(OCLToken *);
+    NSInteger tokenCount = [tokens count];
     
     for ( int i=0; i<tokenCount; i++ ) {
-        
-        NSLog( @"Token: %@", [[tokens  objectAtIndex:i] content] );
         
         for ( id <OCLRule> rule in rules_ ) {
             

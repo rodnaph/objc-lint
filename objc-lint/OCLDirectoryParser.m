@@ -70,6 +70,8 @@
     
     for ( int i=0; i<tokenCount; i++ ) {
         
+        NSLog( @"Token: %@", [[tokens  objectAtIndex:i] content] );
+        
         for ( id <OCLRule> rule in rules_ ) {
             
             NSArray *ruleErrors = [rule handleToken:tokens atIndex:i];

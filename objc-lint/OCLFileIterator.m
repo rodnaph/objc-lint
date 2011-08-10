@@ -3,32 +3,32 @@
 
 @interface OCLFileIterator (Private)
 
-- (void)loadPaths;
+- (void)loadFilePaths;
 
 @end
 
 @implementation OCLFileIterator
 
-@synthesize path=path_,
-            paths=paths_;
+@synthesize rootPath=rootPath_,
+            filePaths=filePaths_;
 
 #pragma mark -
 #pragma mark Init
 
 - (void)dealloc {
     
-    [path_ release];
-    [paths_ release];
+    [rootPath_ release];
+    [filePaths_ release];
     
     [super dealloc];
     
 }
 
-- (id)initWithPath:(NSString *)path {
+- (id)initWithPath:(NSString *)rootPath {
     
     if ( (self = [super init]) ) {
-        self.path = path;
-        [self loadPaths];
+        self.rootPath = rootPath;
+        [self loadFilePaths];
         currentPathIndex = 0;
     }
     
@@ -41,8 +41,8 @@
 
 - (NSString *)next {
 
-    return currentPathIndex < [paths_ count]
-        ? [NSString stringWithFormat:@"%@%@", path_, [paths_ objectAtIndex:currentPathIndex++]]
+    return currentPathIndex < [filePaths_ count]
+        ? [NSString stringWithFormat:@"%@%@", rootPath_, [filePaths_ objectAtIndex:currentPathIndex++]]
         : nil;
 
 }
@@ -50,10 +50,10 @@
 #pragma mark -
 #pragma mark Private
 
-- (void)loadPaths {
+- (void)loadFilePaths {
 
     NSMutableArray *filePaths = [[NSMutableArray alloc] init];
-    NSArray *allPaths = [[[NSFileManager defaultManager] enumeratorAtPath:path_] allObjects];
+    NSArray *allPaths = [[[NSFileManager defaultManager] enumeratorAtPath:rootPath_] allObjects];
     
     for ( NSString *path in allPaths ) {
         NSString *extension = [path substringFromIndex:[path length] - 2];
@@ -62,7 +62,7 @@
         }
     }
     
-    self.paths = [NSArray arrayWithArray:filePaths];
+    self.filePaths = [NSArray arrayWithArray:filePaths];
     
     [filePaths release];
     

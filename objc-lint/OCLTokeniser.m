@@ -19,6 +19,9 @@
 // YES if chr is 0-9, NO otherwise
 - (BOOL)isNumeric:(int)chr;
 
+// returns previous character, or -1
+- (int)prev;
+
 @end
 
 @implementation OCLTokeniser
@@ -101,12 +104,11 @@ static const int asciiTokens[26] = {
 
     OCLToken *currentToken_ = nil;
     int tokenCount = sizeof(asciiTokens) / sizeof(int);
-    int prevChr = -1;
     
     while ( currentPos_ < [fileContent_ length] ) {
         
         int chr = [self read];
-
+        
         if ( currentToken_.type == OCL_TOKEN_PREPROC ) {
             if ( chr == OCL_CHR_NEWLINE ) {
                 return currentToken_;
@@ -145,7 +147,7 @@ static const int asciiTokens[26] = {
         
         else if ( currentToken_.type == OCL_TOKEN_LITERAL ) {
             [currentToken_ append:chr];
-            if ( chr == OCL_CHR_QUOTE && prevChr != OCL_CHR_BACKSLASH ) {
+            if ( chr == OCL_CHR_QUOTE && [self prev] != OCL_CHR_BACKSLASH ) {
                 return currentToken_;
             }
         }
@@ -218,8 +220,6 @@ static const int asciiTokens[26] = {
             exit( 1 );
             
         }
-        
-        prevChr = chr;
 
     }
     
@@ -231,6 +231,14 @@ static const int asciiTokens[26] = {
     
     return [fileContent_ characterAtIndex:currentPos_++];
     
+}
+
+- (int)prev {
+    
+    return currentPos_ > 0
+        ? [fileContent_ characterAtIndex:currentPos_-1]
+        : -1;
+
 }
 
 - (void)putBack:(int)chr {
